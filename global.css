@@ -1,0 +1,191 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+}
+#over-engineered-banner{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.851);
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+    top: 0;
+    left: 0;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px) brightness(0.5);
+    opacity: 0.5;
+}
+
+.back {
+    /* Vignette */
+    background-image:
+        radial-gradient(circle at center,
+            rgba(0,0,0,0) 65%,
+            rgba(0,0,0,0.6) 100%
+        ),
+        url(images/BlueprintTilable.png);
+    background-repeat: repeat;
+    background-size: cover, 300px;
+    background-position: center, -150px -150px;
+    image-rendering: pixelated;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -5;
+}
+
+.top-bar {
+    width: 100%;
+    height: 3rem;
+    background-color: #60877F;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.top-bar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 15px;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.237),
+        rgba(0,0,0,0)
+    );
+    pointer-events: none;
+}
+
+.wrapper{
+    background-color: rgba(0, 0, 0, 0.474);
+    width: 50%;
+    height: fit-content;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 25vh 50vh auto 20vh;
+    grid-template-areas:
+        "Header Header"
+        "Aside Main"
+        "Section Section"
+        "Footer Footer";
+}
+.gold-button{
+    background-image: url("images/GoldenButton.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80%;
+    height: 80px;
+    image-rendering: pixelated;
+    border: none;
+    position: relative;
+    display: block;
+    margin: 1rem auto;
+    background-color: transparent;
+}
+.gold-button:hover{
+    background-image: url("images/HoverButton.png");
+}
+
+.gold-button:active{
+    background-image: url("images/PressedButton.png");
+}
+
+.gold-button h3{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.gold-button:active h3{
+    top: 55%;
+}
+main{
+    grid-area: Main;
+    margin: 1rem;
+}
+
+footer{
+    grid-area: Footer;
+}
+
+aside{
+    grid-area: Aside;
+}
+
+.media{
+    grid-area: Section;
+    margin: 1rem;
+    margin-top: 5rem;
+
+}
+
+
+header{
+    grid-area: Header;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+.logo{
+    margin-top: 2rem;
+    margin-left: 1rem;
+    height: 70%;
+}
+.block{
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding: 1rem;
+}
+
+
+h2, h3{
+    font-family: m6x11;
+    font-weight: 300;
+    font-size: 2rem;
+    text-shadow: -1px 2px 3px rgba(0, 0, 0, 0.277);
+    margin: 1rem;
+    margin-top: 2rem;
+}
+
+p, ul, ol, dl{
+    margin: 1rem;
+}
+
+ul{
+    margin-left: 2rem;
+}
+.section-block{
+    height: fit-content;
+}
+
+.img-container {
+    display: grid;
+    height: fit-content;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1rem;
+}
+
+.img-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+}
